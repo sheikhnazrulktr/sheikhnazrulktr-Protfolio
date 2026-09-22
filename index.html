@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .social-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+      .social-link{display:inline-flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid #333;color:#bdbbb5;background:#111;text-transform:uppercase;font-size:10px;font-weight:700;letter-spacing:.13em;transition:.3s}
+      .social-link svg{width:16px;height:16px;fill:currentColor;flex:none}
+      .social-link:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 24px #d7ff4f18}
+    </style>
   </head>
   <body>
     <div class="cursor"></div>
@@ -20,132 +26,38 @@
       <a class="brand" href="#home"><span>SN</span><small>Developer</small></a>
       <button class="menu" aria-label="Open menu"><i></i><i></i></button>
       <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#work">Work</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
       <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-grid"></div>
+        <div class="hero-bg"></div><div class="hero-grid"></div>
         <div class="hero-copy reveal">
           <p class="eyebrow">BCA student • aspiring developer</p>
           <h1>Building<br /><span>digital</span><br />experiences.</h1>
           <p class="intro">I’m Sheikh Nazrul — a developer exploring web technologies, programming, and data visualization while building practical solutions.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#work">View my work <b>↗</b></a>
-            <a class="btn btn-secondary" href="#contact">Let’s connect</a>
-          </div>
+          <div class="actions"><a class="btn btn-primary" href="#work">View my work <b>↗</b></a><a class="btn btn-secondary" href="#contact">Let’s connect</a></div>
         </div>
-        <div class="hero-photo reveal">
-          <div class="photo-frame">
-            <img src="profile.webp" alt="Sheikh Nazrul" />
-            <div class="photo-badge">Available for opportunities</div>
-          </div>
-        </div>
+        <div class="hero-photo reveal"><div class="photo-frame"><img src="profile.webp" alt="Sheikh Nazrul" /><div class="photo-badge">Available for opportunities</div></div></div>
         <div class="scroll-note">Scroll to explore <span>↓</span></div>
       </section>
 
-      <section id="about" class="section about">
-        <div class="section-header"><p class="kicker">01 — About</p></div>
-        <div class="section-content two-col">
-          <div><h2 class="display">Curious mind.<br /><span>Developer mindset.</span></h2></div>
-          <div class="copy">
-            <p class="lead">I’m looking for opportunities where I can grow as a developer, build practical solutions, and continuously improve my technical skills.</p>
-            <p>I enjoy learning new technologies, collaborating with teams, and taking on challenging opportunities that help me develop into a strong problem solver.</p>
-            <div class="facts">
-              <div><b>BCA</b><small>Completed</small></div>
-              <div><b>WEB</b><small>HTML · CSS · JavaScript</small></div>
-              <div><b>DATA</b><small>Visualization & plotting</small></div>
-              <div><b>TEAM</b><small>Collaboration & coordination</small></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="about" class="section about"><div class="section-header"><p class="kicker">01 — About</p></div><div class="section-content two-col"><div><h2 class="display">Curious mind.<br /><span>Developer mindset.</span></h2></div><div class="copy"><p class="lead">I’m looking for opportunities where I can grow as a developer, build practical solutions, and continuously improve my technical skills.</p><p>I enjoy learning new technologies, collaborating with teams, and taking on challenging opportunities that help me develop into a strong problem solver.</p><div class="facts"><div><b>BCA</b><small>Completed</small></div><div><b>WEB</b><small>HTML · CSS · JavaScript</small></div><div><b>DATA</b><small>Visualization & plotting</small></div><div><b>TEAM</b><small>Collaboration & coordination</small></div></div></div></div></section>
 
-      <section id="skills" class="section skills">
-        <div class="section-header"><p class="kicker">02 — Toolkit</p></div>
-        <div class="section-content">
-          <h2 class="display">Tools I <span>work with.</span></h2>
-          <div class="skill-list">
-            <div class="skill"><span>01</span><b>C</b><small>Programming</small></div>
-            <div class="skill"><span>02</span><b>C++</b><small>Programming</small></div>
-            <div class="skill"><span>03</span><b>HTML</b><small>Web</small></div>
-            <div class="skill"><span>04</span><b>CSS</b><small>Web</small></div>
-            <div class="skill"><span>05</span><b>JavaScript</b><small>Web</small></div>
-            <div class="skill"><span>06</span><b>MySQL</b><small>Database</small></div>
-          </div>
-        </div>
-      </section>
+      <section id="skills" class="section skills"><div class="section-header"><p class="kicker">02 — Toolkit</p></div><div class="section-content"><h2 class="display">Tools I <span>work with.</span></h2><div class="skill-list"><div class="skill"><span>01</span><b>C</b><small>Programming</small></div><div class="skill"><span>02</span><b>C++</b><small>Programming</small></div><div class="skill"><span>03</span><b>HTML</b><small>Web</small></div><div class="skill"><span>04</span><b>CSS</b><small>Web</small></div><div class="skill"><span>05</span><b>JavaScript</b><small>Web</small></div><div class="skill"><span>06</span><b>MySQL</b><small>Database</small></div></div></div></section>
 
-      <section id="work" class="section work">
-        <div class="section-header"><p class="kicker">03 — Featured work</p></div>
-        <div class="section-content">
-          <div class="project-head">
-            <div><p class="mini">01 / Web platform</p><h2 class="display">Insta<span>Supermart</span></h2></div>
-            <div class="project-role">Frontend developer<br />& team member</div>
-          </div>
-          <div class="project-card">
-            <div class="project-visual">
-              <div class="mock-window">
-                <div class="mock-top"><i></i><i></i><i></i><span>instasupermart</span></div>
-                <div class="mock-body">
-                  <div class="mock-logo">LOCAL<span>+</span></div>
-                  <div class="mock-title">Everything nearby.<br /><em>Delivered fast.</em></div>
-                  <div class="mock-bars"><i></i><i></i><i></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="project-info">
-              <p>Hyperlocal e-commerce platform</p>
-              <h3>Connecting local stores with nearby customers for quick delivery.</h3>
-              <p class="muted">Built features including user login, product listing, cart, checkout, vendor inventory, and an admin panel. The project also involved database design and query optimization.</p>
-              <div class="tags"><span>HTML</span><span>Tailwind CSS</span><span>JavaScript</span><span>MySQL</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="work" class="section work"><div class="section-header"><p class="kicker">03 — Featured work</p></div><div class="section-content"><div class="project-head"><div><p class="mini">01 / Web platform</p><h2 class="display">Insta<span>Supermart</span></h2></div><div class="project-role">Frontend developer<br />& team member</div></div><div class="project-card"><div class="project-visual"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i><span>instasupermart</span></div><div class="mock-body"><div class="mock-logo">LOCAL<span>+</span></div><div class="mock-title">Everything nearby.<br /><em>Delivered fast.</em></div><div class="mock-bars"><i></i><i></i><i></i></div></div></div></div><div class="project-info"><p>Hyperlocal e-commerce platform</p><h3>Connecting local stores with nearby customers for quick delivery.</h3><p class="muted">Built features including user login, product listing, cart, checkout, vendor inventory, and an admin panel. The project also involved database design and query optimization.</p><div class="tags"><span>HTML</span><span>Tailwind CSS</span><span>JavaScript</span><span>MySQL</span></div></div></div></div></section>
 
-      <section id="journey" class="section journey">
-        <div class="section-header"><p class="kicker">04 — Journey</p></div>
-        <div class="section-content two-col">
-          <div><h2 class="display">Learning is<br /><span>the journey.</span></h2></div>
-          <div class="timeline">
-            <article><span>2026 — Present</span><h3>Bachelor of Computer Applications</h3><p>TH SITM, Al-Karim University</p></article>
-            <article><span>2022</span><h3>12th</h3><p>M.B.T.A Islamia H/S, Katihar · BSEB Patna · 61.8%</p></article>
-            <article><span>2020</span><h3>10th</h3><p>Children's Happy Home, Rojidpur, Katihar · CBSE Delhi · 52.4%</p></article>
-            <article class="cert"><span>Certification</span><h3>IBM — Data Visualization</h3><p>Excel dashboards, R statistical plotting, and Python visualization libraries including Matplotlib and Seaborn.</p></article>
-          </div>
-        </div>
-      </section>
+      <section id="journey" class="section journey"><div class="section-header"><p class="kicker">04 — Journey</p></div><div class="section-content two-col"><div><h2 class="display">Learning is<br /><span>the journey.</span></h2></div><div class="timeline"><article><span>2026 — Present</span><h3>Bachelor of Computer Applications</h3><p>TH SITM, Al-Karim University</p></article><article><span>2022</span><h3>12th</h3><p>M.B.T.A Islamia H/S, Katihar · BSEB Patna · 61.8%</p></article><article><span>2020</span><h3>10th</h3><p>Children's Happy Home, Rojidpur, Katihar · CBSE Delhi · 52.4%</p></article><article class="cert"><span>Certification</span><h3>IBM — Data Visualization</h3><p>Excel dashboards, R statistical plotting, and Python visualization libraries including Matplotlib and Seaborn.</p></article></div></div></section>
 
-      <section class="statement">
-        <div class="statement-bg">Create • Learn • Build • Grow</div>
-        <div class="statement-text">Turning curiosity<br />into <em>digital work.</em></div>
-      </section>
+      <section class="statement"><div class="statement-bg">Create • Learn • Build • Grow</div><div class="statement-text">Turning curiosity<br />into <em>digital work.</em></div></section>
 
-      <section id="contact" class="section contact">
-        <div class="section-header"><p class="kicker">05 — Contact</p></div>
-        <div class="section-content contact-grid">
-          <div><p class="mini">Have a project or opportunity?</p><h2 class="display">Let’s make<br /><span>something.</span></h2></div>
-          <div class="contact-side">
-            <a class="email" href="mailto:sheikhnazrulktr@gmail.com?subject=Hello%20Sheikh%20Nazrul">sheikhnazrulktr@gmail.com <span>↗</span></a>
-            <a class="phone" href="tel:+916201335297">+91 62013 35297 <span>↗</span></a>
-            <a class="cta-message" href="#contact">Message me here <span>↗</span></a>
-            <p>If anyone wants to get in touch, send me a message and I’ll get back to you soon.</p>
-            <div class="contact-meta"><span>Katihar, Bihar</span><span>India</span></div>
-            <div class="social-links" aria-label="Social media links">
-              <a href="https://www.linkedin.com/in/sheikh-nazrul-a7b724287" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
-              <a href="https://www.instagram.com/sheikh_nazrul_?stkn=MXc3OHdxNnljamlnZg==" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a>
-              <a href="https://www.facebook.com/ezaz.shaikh.5245" target="_blank" rel="noopener noreferrer">Facebook <span>↗</span></a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="contact" class="section contact"><div class="section-header"><p class="kicker">05 — Contact</p></div><div class="section-content contact-grid"><div><p class="mini">Have a project or opportunity?</p><h2 class="display">Let’s make<br /><span>something.</span></h2></div><div class="contact-side"><a class="email" href="mailto:sheikhnazrulktr@gmail.com?subject=Hello%20Sheikh%20Nazrul">sheikhnazrulktr@gmail.com <span>↗</span></a><a class="phone" href="tel:+916201335297">+91 62013 35297 <span>↗</span></a><a class="cta-message" href="#contact">Message me here <span>↗</span></a><p>If anyone wants to get in touch, send me a message and I’ll get back to you soon.</p><div class="contact-meta"><span>Katihar, Bihar</span><span>India</span></div><div class="social-links" aria-label="Social media links">
+          <a class="social-link" href="https://www.linkedin.com/in/sheikh-nazrul-a7b724287" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.83C21 10.06 19 8.3 16.3 8.3a4.36 4.36 0 0 0-3.8 2.09h-.05V8.5H9.1V21h3.5v-6.19c0-1.63.3-3.2 2.33-3.2 2 0 2.02 1.86 2.02 3.3V21H21v-7.17Z"/></svg>LinkedIn <span>↗</span></a>
+          <a class="social-link" href="https://www.instagram.com/sheikh_nazrul_?stkn=MXc3OHdxNnljamlnZg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.1 2A3.1 3.1 0 0 0 4 7.1v9.8A3.1 3.1 0 0 0 7.1 20h9.8a3.1 3.1 0 0 0 3.1-3.1V7.1A3.1 3.1 0 0 0 16.9 4H7.1Zm9.65 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>Instagram <span>↗</span></a>
+          <a class="social-link" href="https://www.facebook.com/ezaz.shaikh.5245" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.8l.4-3.1h-3.2V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg>Facebook <span>↗</span></a>
+        </div></div></div></section>
     </main>
 
     <footer><span>© <span id="year"></span> Sheikh Nazrul</span><span>Designed & built with code</span><a href="#home">Back to top ↑</a></footer>
