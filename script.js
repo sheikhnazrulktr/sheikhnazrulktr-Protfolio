@@ -56,6 +56,29 @@ style.textContent = `
   .observe.in{opacity:1;transform:none}
   .skill:nth-child(2),.skill:nth-child(5){transition-delay:.08s}
   .skill:nth-child(3),.skill:nth-child(6){transition-delay:.16s}
+  .contact-modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);animation:modalFade .35s ease}
+  .contact-dialog{position:relative;width:min(100%,560px);max-height:90vh;overflow:auto;padding:42px;background:linear-gradient(145deg,#181818,#0b0b0b);border:1px solid #3a3a3a;box-shadow:0 30px 90px #000;border-radius:4px;animation:modalUp .45s cubic-bezier(.2,.8,.2,1)}
+  .contact-dialog:before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent)}
+  .contact-close{position:absolute;top:16px;right:20px;border:0;background:none;color:#aaa;font-size:30px;line-height:1;cursor:pointer;transition:color .25s,transform .25s}
+  .contact-close:hover{color:var(--accent);transform:rotate(90deg)}
+  .modal-kicker{margin-bottom:12px;color:var(--accent);font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+  .contact-dialog h2{max-width:430px;margin-bottom:28px;color:var(--text);font:800 clamp(32px,5vw,54px)/.98 Manrope;letter-spacing:-.06em}
+  .contact-dialog h2 span{color:var(--accent)}
+  .contact-form{display:grid;gap:17px}
+  .contact-form label{display:grid;gap:8px;color:#b9b6ae;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+  .contact-form input,.contact-form textarea{width:100%;border:1px solid #363636;border-radius:0;background:#101010;color:var(--text);padding:14px 15px;outline:none;font:15px "DM Sans",sans-serif;letter-spacing:0;text-transform:none;transition:border-color .25s,box-shadow .25s}
+  .contact-form textarea{resize:vertical;min-height:125px}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:#686868}
+  .contact-form input:focus,.contact-form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #d7ff4f18}
+  .contact-form .btn{justify-self:start;margin-top:7px;cursor:pointer}
+  .contact-form .btn:disabled{opacity:.65;cursor:wait;transform:none}
+  .form-note{margin-top:18px;color:#777;font-size:11px;line-height:1.6}
+  .form-success{padding:28px 0;color:#ddd;border-top:1px solid #333;border-bottom:1px solid #333}
+  .form-success strong{display:block;margin-bottom:8px;color:var(--accent);font:700 22px Manrope}
+  .form-success p{color:#999}
+  @keyframes modalFade{from{opacity:0}to{opacity:1}}
+  @keyframes modalUp{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+  @media(max-width:520px){.contact-modal{padding:14px}.contact-dialog{padding:34px 22px 24px}.contact-dialog h2{margin-bottom:22px}}
 `;
 document.head.appendChild(style);
 
@@ -82,7 +105,7 @@ function openContactForm(event) {
         <label>Work / opportunity<input name="work" type="text" placeholder="What would you like to discuss?" required /></label>
         <label>Email<input name="email" type="email" placeholder="Your email address" required /></label>
         <label>Message<textarea name="message" rows="5" placeholder="Write your message" required></textarea></label>
-        <button class="btn btn-primary" type="submit">Send message <b>↗</b></button>
+        <button class="btn btn-fill" type="submit">Send message <b>↗</b></button>
       </form>
       <p class="form-note">Your message will be sent directly through this website.</p>
     </div>
