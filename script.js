@@ -56,6 +56,20 @@ style.textContent = `
   .observe.in{opacity:1;transform:none}
   .skill:nth-child(2),.skill:nth-child(5){transition-delay:.08s}
   .skill:nth-child(3),.skill:nth-child(6){transition-delay:.16s}
+  .contact-side{position:relative;padding:34px 0 0 34px;border-left:1px solid #303030}
+  .contact-side:before{content:"LET'S CONNECT";position:absolute;top:0;left:34px;color:var(--accent);font-size:9px;letter-spacing:.22em;font-weight:700}
+  .contact-side .email,.contact-side .phone{display:flex;align-items:center;justify-content:space-between;width:100%;padding:18px 0;border-bottom:1px solid #303030;font:600 clamp(16px,1.7vw,24px) Manrope;transition:color .25s,border-color .25s}
+  .contact-side .phone{font-size:clamp(15px,1.45vw,20px);color:#bdbbb5}
+  .contact-side .email:hover,.contact-side .phone:hover{color:var(--accent);border-color:var(--accent)}
+  .contact-side .email span,.contact-side .phone span,.social-link span{color:var(--accent);font-size:18px}
+  .contact-side .cta-message{display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:13px 18px;border:1px solid var(--accent);color:var(--accent);font:600 10px Manrope;letter-spacing:.16em;text-transform:uppercase;transition:.3s}
+  .contact-side .cta-message:hover{background:var(--accent);color:#080808;transform:translateY(-3px);box-shadow:0 12px 28px #d7ff4f22}
+  .contact-side>p{max-width:390px;margin-top:25px;color:#777;line-height:1.7}
+  .contact-meta{display:flex;gap:28px;margin-top:28px;color:#aaa;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+  .social-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px;padding-top:22px;border-top:1px solid #303030}
+  .social-link{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid #333;color:#aaa;background:#101010;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.3s}
+  .social-link svg{width:15px;height:15px;fill:currentColor}
+  .social-link:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 24px #d7ff4f18}
   .contact-modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);animation:modalFade .35s ease}
   .contact-dialog{position:relative;width:min(100%,560px);max-height:90vh;overflow:auto;padding:42px;background:linear-gradient(145deg,#181818,#0b0b0b);border:1px solid #3a3a3a;box-shadow:0 30px 90px #000;border-radius:4px;animation:modalUp .45s cubic-bezier(.2,.8,.2,1)}
   .contact-dialog:before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent)}
@@ -78,11 +92,11 @@ style.textContent = `
   .form-success p{color:#999}
   @keyframes modalFade{from{opacity:0}to{opacity:1}}
   @keyframes modalUp{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
-  @media(max-width:520px){.contact-modal{padding:14px}.contact-dialog{padding:34px 22px 24px}.contact-dialog h2{margin-bottom:22px}}
+  @media(max-width:850px){.contact-side{padding:34px 0 0;border-left:0;border-top:1px solid #303030}.contact-side:before{left:0;top:18px}}
+  @media(max-width:520px){.contact-modal{padding:14px}.contact-dialog{padding:34px 22px 24px}.contact-dialog h2{margin-bottom:22px}.contact-side .email{font-size:16px}.contact-meta{flex-direction:column;gap:12px}}
 `;
 document.head.appendChild(style);
 
-// Formspree receives contact messages directly and forwards them to the verified email.
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mzezrlyr";
 const messageLink = document.querySelector(".cta-message");
 
@@ -153,5 +167,4 @@ function openContactForm(event) {
 }
 
 messageLink?.addEventListener("click", openContactForm);
-
 document.getElementById("year").textContent = new Date().getFullYear();
