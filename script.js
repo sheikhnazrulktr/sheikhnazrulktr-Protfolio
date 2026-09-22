@@ -59,8 +59,8 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// The static portfolio uses the visitor's email client to send messages.
-// Name, work/opportunity and message are included in the email automatically.
+// Formspree receives contact messages directly and forwards them to the verified email.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mzezrlyr";
 const messageLink = document.querySelector(".cta-message");
 
 function closeContactForm() {
@@ -80,10 +80,11 @@ function openContactForm(event) {
       <form class="contact-form">
         <label>Name<input name="name" type="text" placeholder="Your name" required /></label>
         <label>Work / opportunity<input name="work" type="text" placeholder="What would you like to discuss?" required /></label>
+        <label>Email<input name="email" type="email" placeholder="Your email address" required /></label>
         <label>Message<textarea name="message" rows="5" placeholder="Write your message" required></textarea></label>
         <button class="btn btn-primary" type="submit">Send message <b>↗</b></button>
       </form>
-      <p class="form-note">Your email app will open with the message ready to send.</p>
+      <p class="form-note">Your message will be sent directly through this website.</p>
     </div>
   `;
 
@@ -94,13 +95,37 @@ function openContactForm(event) {
     if (clickEvent.target === modal) closeContactForm();
   });
 
-  modal.querySelector(".contact-form").addEventListener("submit", (submitEvent) => {
+  modal.querySelector(".contact-form").addEventListener("submit", async (submitEvent) => {
     submitEvent.preventDefault();
-    const formData = new FormData(submitEvent.currentTarget);
-    const subject = `Portfolio enquiry: ${formData.get("work")}`;
-    const body = `Name: ${formData.get("name")}\nWork / opportunity: ${formData.get("work")}\n\nMessage:\n${formData.get("message")}`;
-    window.location.href = `mailto:sheikhnazrulktr@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    closeContactForm();
+
+    const form = submitEvent.currentTarget;
+    const button = form.querySelector("button[type=submit]");
+    const originalText = button.innerHTML;
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Form submission failed");
+
+      form.innerHTML = `
+        <div class="form-success" role="status">
+          <strong>Message sent successfully.</strong>
+          <p>Thank you. I’ll get back to you soon.</p>
+        </div>
+      `;
+    } catch (error) {
+      button.disabled = false;
+      button.innerHTML = originalText;
+      const note = modal.querySelector(".form-note");
+      note.textContent = "Message could not be sent. Please try again.";
+      note.style.color = "#c0392b";
+    }
   });
 }
 
